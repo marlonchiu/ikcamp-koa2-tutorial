@@ -1,32 +1,34 @@
 const Koa = require('koa')
+const Router = require('koa-router')
 const app = new Koa()
+const router = new Router()
 
-app.use(async (ctx, next) => {
-  const stime = new Date().getTime()
+router.all('/*', async (ctx, next) => {
+  // 代表允许来自所有域名请求
+  ctx.set('Access-Control-Allow-Origin', '*')
+  // 其他一些设置...
   await next()
-  const etime = new Date().getTime()
-  ctx.response.type = 'text/html'
-  ctx.response.body = '<h1>Hello World</h1>'
-  console.log(`请求地址: ${ctx.path}，响应时间：${etime - stime}ms`)
 })
 
-app.use(async (ctx, next) => {
-  console.log('中间件1 doSoming')
-  await next()
-  console.log('中间件1 end')
-})
+// router.use(async (ctx, next) => {
+//   // 重定向到路由名称为 “sign-in” 的页面
+//   ctx.redirect(ctx.router.url('sign-in'))
+//   await next()
+// })
 
-app.use(async (ctx, next) => {
-  console.log('中间件2 doSoming')
-  // await next()  『后面的中间件将不会执行』
-  console.log('中间件2 end')
-})
+router
+  .get('/', async (ctx) => {
+    ctx.body = 'Index Page'
+  })
+  .get('/home', async (ctx) => {
+    ctx.body = 'Home Page'
+  })
+  .get('user', '/users/:id', async (ctx) => {
+    ctx.body = ctx.url
+  })
 
-app.use(async (ctx, next) => {
-  console.log('中间件3 doSoming')
-  await next()
-  console.log('中间件3 end')
-})
+app.use(router.routes())
+  .use(router.allowedMethods())
 
 app.listen(3000, () => {
   console.log('[demo] server is starting at port 3000')
