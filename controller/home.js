@@ -3,7 +3,7 @@ const HomeService = require('../service/home')
 
 module.exports = {
   index: async (ctx, next) => {
-    ctx.body = '<h1>Index page</h1>'
+    await ctx.render('home/index', { title: 'iKcamp 欢迎您' })
   },
   home: async (ctx, next) => {
     const url = ctx.url
@@ -29,7 +29,12 @@ module.exports = {
   },
   register: async (ctx, next) => {
     const { name, password } = ctx.request.body
-    const data = await HomeService.register(name, password)
-    ctx.response.body = data
+    const res = await HomeService.register(name, password)
+    if (res.status === -1) {
+      ctx.render('home/login', res.data)
+    } else if (res.status === -1) {
+      ctx.state.title = '个人中心'
+      await ctx.render('home/success', res.data)
+    }
   }
 }

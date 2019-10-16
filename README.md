@@ -25,3 +25,7 @@
 [视图nunjucks——Koa 默认支持的模板引擎](https://github.com/ikcamp/koa2-tutorial/tree/5-nunjucks)
 
 简单的Nunjucks 模板语法介绍
+
+## 静态资源
+
+[处理静态资源——指定静态文件目录，设定缓存](https://github.com/ikcamp/koa2-tutorial/tree/6-static)
