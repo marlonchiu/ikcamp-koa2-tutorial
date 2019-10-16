@@ -11,3 +11,7 @@
 ## 路由
 
 [路由koa-router——MVC 中重要的环节：Url 处理器](https://github.com/ikcamp/koa2-tutorial/tree/2-koa-router)
+
+## 求方式
+
+[POST/GET请求——常见请求方式处理](https://github.com/ikcamp/koa2-tutorial/tree/3-router-request)
