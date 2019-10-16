@@ -12,6 +12,10 @@
 
 [路由koa-router——MVC 中重要的环节：Url 处理器](https://github.com/ikcamp/koa2-tutorial/tree/2-koa-router)
 
-## 求方式
+## 请求方式
 
 [POST/GET请求——常见请求方式处理](https://github.com/ikcamp/koa2-tutorial/tree/3-router-request)
+
+## **代码分层**(立足于开发业务场景了)
+
+[代码分层——梳理代码，渐近于 MVC 分层模式](https://github.com/ikcamp/koa2-tutorial/tree/4-refactor)
