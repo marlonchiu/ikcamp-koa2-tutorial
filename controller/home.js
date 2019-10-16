@@ -23,17 +23,9 @@ module.exports = {
     }
   },
   login: async (ctx, next) => {
-    const html =
-      `
-        <form action="/user/register" method="post">
-          <input name="name" type="text" placeholder="请输入用户名：ikcamp" />
-          <br/>
-          <input name="password" type="text" placeholder="请输入密码：123456"/>
-          <br/>
-          <button>GoGoGo</button>
-        </form>
-      `
-    ctx.body = html
+    await ctx.render('home/login', {
+      btnName: '登录'
+    })
   },
   register: async (ctx, next) => {
     const { name, password } = ctx.request.body
