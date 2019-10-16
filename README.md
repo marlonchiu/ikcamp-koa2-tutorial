@@ -33,3 +33,13 @@
 ## 解析JSON
 
 [解析JSON——让 Koa2 支持响应 JSON 数据](https://github.com/ikcamp/koa2-tutorial/tree/7-mi-send)
+
+## 记录日志
+
+[记录日志——开发日志中间件，记录项目中的各种形式信息](https://github.com/ikcamp/koa2-tutorial/tree/8-mi-log)
+
+* 日志作用
+  * 显示程序运行状态
+  * 帮助开发者排除问题故障
+  * 结合专业的日志分析工具（如 ELK ）给出预警
+* `Log4js` 是 Node.js 中一个成熟的记录日志的第三方模块
