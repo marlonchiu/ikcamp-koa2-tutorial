@@ -29,3 +29,7 @@
 ## 静态资源
 
 [处理静态资源——指定静态文件目录，设定缓存](https://github.com/ikcamp/koa2-tutorial/tree/6-static)
+
+## 解析JSON
+
+[解析JSON——让 Koa2 支持响应 JSON 数据](https://github.com/ikcamp/koa2-tutorial/tree/7-mi-send)
