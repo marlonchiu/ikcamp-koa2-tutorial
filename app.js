@@ -9,5 +9,5 @@ middleware(app)
 router(app)
 
 app.listen(3000, () => {
-  console.log('[demo] server is starting at port 3000')
+  console.log('[demo] server is running at http://localhost:3000')
 })
